@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#i#",
+    "igi",
+    "#i#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:brick"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "g": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "equivalence:inert_stone",
+    "count": 1
+  }
+}

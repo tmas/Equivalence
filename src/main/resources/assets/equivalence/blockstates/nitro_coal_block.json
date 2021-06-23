@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "equivalence:block/nitro_coal_block" }
+  }
+}

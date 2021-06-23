@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "equivalence:philosophers_stone"
+    },
+    {
+      "item": "minecraft:sandstone"
+    },
+    {
+      "item": "minecraft:sandstone"
+    },
+    {
+      "item": "minecraft:sandstone"
+    },
+    {
+      "item": "minecraft:sandstone"
+    }
+  ],
+  "result": {
+    "item": "minecraft:clay_ball",
+    "count": 1
+  }
+}

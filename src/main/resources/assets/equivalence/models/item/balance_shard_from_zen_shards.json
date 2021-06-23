@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "equivalence:zen_shard"
+    }
+  },
+  "result": {
+    "item": "equivalence:balance_shard",
+    "count": 1
+  }
+}

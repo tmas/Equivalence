@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#I#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "equivalence:zen_shard"
+    },
+    "I": {
+      "item": "equivalence:inert_stone"
+    }
+  },
+  "result": {
+    "item": "equivalence:zen_stone",
+    "count": 1
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "equivalence:philosophers_stone"
+    },
+    {
+      "item": "minecraft:ancient_debris"
+    }
+  ],
+  "result": {
+    "item": "minecraft:emerald_block",
+    "count": 2
+  }
+}

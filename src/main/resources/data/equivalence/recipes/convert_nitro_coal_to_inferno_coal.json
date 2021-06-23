@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "equivalence:philosophers_stone"
+    },
+    {
+      "item": "equivalence:nitro_coal"
+    },
+    {
+      "item": "equivalence:nitro_coal"
+    },
+    {
+      "item": "equivalence:nitro_coal"
+    },
+    {
+      "item": "equivalence:nitro_coal"
+    }
+  ],
+  "result": {
+    "item": "equivalence:inferno_coal",
+    "count": 1
+  }
+}

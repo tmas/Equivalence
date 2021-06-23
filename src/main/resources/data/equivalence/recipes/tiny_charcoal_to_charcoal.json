@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "equivalence:tiny_charcoal"
+    },
+    {
+      "item": "equivalence:tiny_charcoal"
+    },
+    {
+      "item": "equivalence:tiny_charcoal"
+    },
+    {
+      "item": "equivalence:tiny_charcoal"
+    },
+    {
+      "item": "equivalence:tiny_charcoal"
+    },
+    {
+      "item": "equivalence:tiny_charcoal"
+    },
+    {
+      "item": "equivalence:tiny_charcoal"
+    },
+    {
+      "item": "equivalence:tiny_charcoal"
+    }
+  ],
+  "result": {
+    "item": "minecraft:charcoal",
+    "count": 1
+  }
+}

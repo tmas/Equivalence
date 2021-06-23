@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "equivalence:philosophers_stone"
+    },
+    {
+      "item": "minecraft:warped_planks"
+    },
+    {
+      "item": "minecraft:warped_planks"
+    },
+    {
+      "item": "minecraft:warped_planks"
+    },
+    {
+      "item": "minecraft:warped_planks"
+    }
+  ],
+  "result": {
+    "item": "minecraft:warped_stem",
+    "count": 1
+  }
+}

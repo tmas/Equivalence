@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "equivalence:inferno_coal"
+    }
+  },
+  "result": {
+    "item": "equivalence:inferno_coal_block",
+    "count": 1
+  }
+}
