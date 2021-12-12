@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "equivalence:balance_block",
+    "equivalence:nitro_coal_block",
+    "equivalence:inferno_coal_block",
+    "equivalence:blazing_coal_block"
+  ]
+}
