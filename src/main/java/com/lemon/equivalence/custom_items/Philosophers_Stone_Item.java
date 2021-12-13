@@ -16,7 +16,6 @@ public class Philosophers_Stone_Item extends Item implements HasCustomRecipeRema
                 .group(Equivalence.ITEM_GROUP) //CreativeTab
                 .maxCount(1) //Max Amount of Items in Stack
                 .rarity(Rarity.RARE) //Associated Color in Text for Rarity
-                .recipeRemainder(ModItems.DISCHARGED_STONE) //Remaining Item after Crafting Operation - Can't Return Self Oddly
         );
     }
 
