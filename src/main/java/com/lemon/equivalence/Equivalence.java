@@ -3,6 +3,7 @@ package com.lemon.equivalence;
 import com.lemon.equivalence.loot_tables.LootTableAdditions;
 import com.lemon.equivalence.registry.ModBlocks;
 import com.lemon.equivalence.registry.ModItems;
+import com.lemon.equivalence.registry.ModRecipes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
@@ -21,6 +22,7 @@ public class Equivalence implements ModInitializer {
     public void onInitialize() {
         ModItems.registerItems();
         ModBlocks.registerBlocks();
+        ModRecipes.registerRecipes();
 
         LootTableAdditions.modifyLootTables();
     }
