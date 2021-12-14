@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "equivalence",
-  "version": "1.2.1",
+  "version": "1.2.2",
 
   "name": "Equivalence",
   "description": "A Mod About Equivalence!\nTo obtain, something of equal value must be lost. That is Alchemy's first law of Equivalent Exchange.",
@@ -26,10 +26,10 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.12.11",
     "fabric": "*",
-    "minecraft": "1.17.x",
-	"java": ">=16"
+    "minecraft": "1.18.x",
+	"java": ">=17"
   },
   "suggests": {
     "another-mod": "*"
