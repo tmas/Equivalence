@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "equivalence:custom_remainder_shapeless",
   "ingredients": [
     {
       "item": "equivalence:philosophers_stone"
