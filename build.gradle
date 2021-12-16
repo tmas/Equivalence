@@ -85,3 +85,133 @@ publishing {
 		// retrieving dependencies.
 	}
 }
+
+task compileRecipes(type: CompileRecipesTask)
+
+class CompileRecipesTask extends DefaultTask {
+	@TaskAction
+	def compile() {
+		def slurper = new groovy.json.JsonSlurper()
+		ArrayList recipeTrees = slurper.parse(project.file('src/main/resources/recipe_trees.json'))
+		for (def parsedTree: recipeTrees) {
+			def tree = new RecipeTree(parsedTree.name, parsedTree.items)
+			tree.announce()
+		}
+	}
+
+	class RecipeTree {
+		String name;
+		ArrayList<String> items;
+		ArrayList<Recipe> recipes = new ArrayList<Recipe>();
+
+		RecipeTree(String name, ArrayList<String> items) {
+			this.name = name;
+			this.items = items;
+
+			this.buildRecipes();
+		}
+
+		void buildRecipes() {
+			for (int i = 0; i < this.items.size() - 1; i++) {
+				recipes.add(
+						this.buildRecipe(items.get(i), items.get(i + 1))
+				)
+				recipes.add(
+						this.buildRecipe(items.get(i + 1), items.get(i))
+				)
+			}
+		}
+
+		Recipe buildRecipe(String from, String to) {
+			EMCProvider emcProvider = new EMCProvider();
+			int fromEmc = emcProvider.value(from);
+			int toEmc = emcProvider.value(to);
+			ItemStack fromStack, toStack;
+			if (fromEmc > toEmc) {
+				fromStack = new ItemStack(from, 1);
+				toStack = new ItemStack(to, (fromEmc / toEmc) as int);
+			} else {
+				fromStack = new ItemStack(from, (toEmc / fromEmc) as int);
+				toStack = new ItemStack(to, 1);
+			}
+			return new Recipe(fromStack, toStack);
+		}
+
+		void announce() {
+			println String.format("Found tree: %s", this.name)
+			for (int i = 0; i < this.items.size(); i++) {
+				println String.format("\tFound item: %s", this.items.get(i))
+			}
+
+			for (Recipe recipe: this.recipes) {
+				println String.format("\tGenerated recipe: %s", recipe.toString());
+			}
+		}
+	}
+
+	class EMCProvider {
+		AbstractMap<String, Integer> values;
+
+		EMCProvider() {
+			def slurper = new groovy.json.JsonSlurper()
+			this.values = slurper.parse(project.file('src/main/resources/emc_values.json'))
+		}
+
+		int value(String item) {
+			if (this.values.containsKey(item)) {
+				return this.values.get(item)
+			} else {
+				return 1;
+			}
+		}
+
+		int value(ItemStack stack) {
+			return this.values.get(stack.item) * stack.quantity
+		}
+	}
+
+	class Recipe {
+		ArrayList<ItemStack> ingredients;
+		ArrayList<ItemStack> results;
+
+		Recipe (ArrayList<ItemStack> ingredients, ArrayList<ItemStack> results) {
+			this.ingredients = ingredients;
+			this.results = results;
+		}
+
+		Recipe (ItemStack ingredient, ItemStack result) {
+			this.ingredients = new ArrayList<ItemStack>();
+			this.results = new ArrayList<ItemStack>();
+			this.ingredients.add(ingredient);
+			this.results.add(result);
+		}
+
+		String toString() {
+			String from = "From ( ";
+			for (ItemStack stack: ingredients) {
+				from = from.concat(String.format("%d %s, ", stack.quantity, stack.item))
+			}
+			from = from.substring(0, from.length() - 2);
+			from = from.concat(" )");
+
+			String to = "To ( ";
+			for (ItemStack stack: results) {
+				to = to.concat(String.format("%d %s, ", stack.quantity, stack.item))
+			}
+			to = to.substring(0, to.length() - 2);
+			to = to.concat(" )");
+
+			return from.concat(" ").concat(to);
+		}
+	}
+
+	class ItemStack {
+		String item;
+		int quantity;
+
+		ItemStack (String item, int quantity = 1) {
+			this.item = item;
+			this.quantity = quantity;
+		}
+	}
+}
