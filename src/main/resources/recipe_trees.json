@@ -1,0 +1,20 @@
+[
+  {
+    "name": "matter",
+    "items": [
+      "minecraft:iron_ingot",
+      "minecraft:gold_ingot",
+      "minecraft:diamond"
+    ]
+  },
+  {
+    "name": "fuel",
+    "items": [
+      "minecraft:charcoal",
+      "minecraft:coal",
+      "equivalence:nitro_coal",
+      "equivalence:inferno_coal",
+      "equivalence:blazing_coal"
+    ]
+  }
+]
