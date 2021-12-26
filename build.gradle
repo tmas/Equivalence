@@ -88,6 +88,8 @@ publishing {
 
 task compileRecipes(type: CompileRecipesTask)
 
+project.build.dependsOn compileRecipes
+
 class CompileRecipesTask extends DefaultTask {
 	@TaskAction
 	def compile() {
