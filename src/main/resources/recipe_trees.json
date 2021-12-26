@@ -16,5 +16,14 @@
       "equivalence:inferno_coal",
       "equivalence:blazing_coal"
     ]
+  },
+  {
+    "name": "fuel_blocks",
+    "items": [
+      "minecraft:coal_block",
+      "equivalence:nitro_coal_block",
+      "equivalence:inferno_coal_block",
+      "equivalence:blazing_coal_block"
+    ]
   }
 ]

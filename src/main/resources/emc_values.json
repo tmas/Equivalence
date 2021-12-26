@@ -8,6 +8,11 @@
   "ee:aeternalis_fuel": 8192,
   "equivalence:blazing_coal": 8192,
 
+  "minecraft:coal_block": 1152,
+  "equivalence:nitro_coal_block": 4608,
+  "equivalence:inferno_coal_block": 18432,
+  "equivalence:blazing_coal_block": 73728,
+
   "minecraft:iron_ingot": 256,
   "minecraft:gold_ingot": 2048,
   "minecraft:diamond": 8192

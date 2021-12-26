@@ -5,11 +5,11 @@
       "item": "equivalence:philosophers_stone"
     },
     {
-      "item": "minecraft:diamond"
+      "item": "equivalence:nitro_coal_block"
     }
   ],
   "result": {
-    "item": "minecraft:gold_ingot",
+    "item": "minecraft:coal_block",
     "count": 4
   }
 }
