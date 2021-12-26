@@ -96,6 +96,7 @@ class CompileRecipesTask extends DefaultTask {
 		for (def parsedTree: recipeTrees) {
 			def tree = new RecipeTree(parsedTree.name, parsedTree.items)
 			tree.announce()
+			tree.writeRecipes();
 		}
 	}
 
@@ -144,7 +145,14 @@ class CompileRecipesTask extends DefaultTask {
 			}
 
 			for (Recipe recipe: this.recipes) {
-				println String.format("\tGenerated recipe: %s", recipe.toString());
+				println String.format("\tGenerated recipe %s: %s", recipe.getName(), recipe.toString());
+				println String.format("\tRecipe JSON: \n====\n%s\n====", recipe.toJson());
+			}
+		}
+
+		void writeRecipes() {
+			for (Recipe recipe: this.recipes) {
+				recipe.write();
 			}
 		}
 	}
@@ -186,6 +194,19 @@ class CompileRecipesTask extends DefaultTask {
 			this.results.add(result);
 		}
 
+		void write() {
+			File recipeFile = new File(
+					project.getProjectDir(),
+					"src/main/resources/data/equivalence/recipes/generated_from_trees/"
+							.concat(this.getName())
+							.concat(".json")
+			);
+			if (!recipeFile.exists()) {
+				recipeFile.createNewFile()
+			};
+			recipeFile.text = this.toJson();
+		}
+
 		String toString() {
 			String from = "From ( ";
 			for (ItemStack stack: ingredients) {
@@ -203,6 +224,48 @@ class CompileRecipesTask extends DefaultTask {
 
 			return from.concat(" ").concat(to);
 		}
+
+		String getName() {
+			String from = "convert_";
+			for (ItemStack stack: ingredients) {
+				from = from.concat(String.format("%s_", stack.getSimpleItemName()))
+			}
+
+			String to = "to_";
+			for (ItemStack stack: results) {
+				to = to.concat(String.format("%s_", stack.getSimpleItemName()))
+			}
+			to = to.substring(0, to.length() - 1);
+
+			return from.concat(to);
+		}
+
+		String toJson() {
+			String json = new String();
+			json = json.concat("{\n  \"type\": \"equivalence:shapeless_custom_remainder\",\n");
+			json = json.concat("  \"ingredients\": [\n");
+			// always add philosopher's stone as first ingredient
+			json = json.concat("    {\n");
+			json = json.concat("      \"item\": \"equivalence:philosophers_stone\"\n");
+			json = json.concat("    },\n");
+			for (ItemStack ingredient: this.ingredients) {
+				for (int i=0; i< ingredient.quantity; i++) {
+					json = json.concat("    {\n");
+					json = json.concat("      \"item\": \"").concat(ingredient.item).concat("\"\n");
+					json = json.concat("    },\n");
+				}
+			}
+			json = json.substring(0, json.length() - 2); // remove trailing comma to generate valid JSON
+			json = json.concat("\n");
+			json = json.concat("  ],\n");
+			json = json.concat("  \"result\": {\n");
+			json = json.concat("    \"item\": \"").concat(this.results.get(0).item).concat("\",\n");
+			json = json.concat("    \"count\": ").concat((String) this.results.get(0).quantity).concat("\n");
+			json = json.concat("  }\n");
+			json = json.concat("}");
+
+			return json;
+		}
 	}
 
 	class ItemStack {
@@ -212,6 +275,15 @@ class CompileRecipesTask extends DefaultTask {
 		ItemStack (String item, int quantity = 1) {
 			this.item = item;
 			this.quantity = quantity;
+		}
+
+		String getSimpleItemName() {
+			String[] nameSegments = this.item.split(':');
+			if (nameSegments.length == 1) {
+				return nameSegments[0];
+			} else {
+				return nameSegments[1];
+			}
 		}
 	}
 }
