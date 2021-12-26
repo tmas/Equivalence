@@ -1,5 +1,5 @@
 {
-  "type": "equivalence:custom_remainder_shapeless",
+  "type": "equivalence:shapeless_custom_remainder",
   "ingredients": [
     {
       "item": "equivalence:philosophers_stone"

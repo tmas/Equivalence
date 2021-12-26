@@ -5,11 +5,11 @@
       "item": "equivalence:philosophers_stone"
     },
     {
-      "item": "minecraft:melon"
+      "item": "equivalence:inferno_coal"
     }
   ],
   "result": {
-    "item": "minecraft:pumpkin",
-    "count": 1
+    "item": "equivalence:nitro_coal",
+    "count": 4
   }
 }

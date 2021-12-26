@@ -5,20 +5,20 @@
       "item": "equivalence:philosophers_stone"
     },
     {
-      "item": "minecraft:cobblestone"
+      "item": "minecraft:charcoal"
     },
     {
-      "item": "minecraft:cobblestone"
+      "item": "minecraft:charcoal"
     },
     {
-      "item": "minecraft:cobblestone"
+      "item": "minecraft:charcoal"
     },
     {
-      "item": "minecraft:cobblestone"
+      "item": "minecraft:charcoal"
     }
   ],
   "result": {
-    "item": "minecraft:flint",
+    "item": "minecraft:coal",
     "count": 1
   }
 }

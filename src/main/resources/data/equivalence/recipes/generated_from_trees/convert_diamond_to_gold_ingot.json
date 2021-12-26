@@ -1,15 +1,15 @@
 {
-  "type": "equivalence:custom_remainder_shapeless",
+  "type": "equivalence:shapeless_custom_remainder",
   "ingredients": [
     {
       "item": "equivalence:philosophers_stone"
     },
     {
-      "item": "equivalence:inferno_coal"
+      "item": "minecraft:diamond"
     }
   ],
   "result": {
-    "item": "equivalence:nitro_coal",
+    "item": "minecraft:gold_ingot",
     "count": 4
   }
 }
