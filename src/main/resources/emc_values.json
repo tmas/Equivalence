@@ -14,6 +14,7 @@
   "equivalence:blazing_coal_block": 73728,
 
   "minecraft:iron_ingot": 256,
+  "minecraft:ender_pearl": 1024,
   "minecraft:gold_ingot": 2048,
   "minecraft:diamond": 8192
 }
