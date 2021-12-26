@@ -1,0 +1,15 @@
+{
+  "type": "equivalence:shapeless_custom_remainder",
+  "ingredients": [
+    {
+      "item": "equivalence:philosophers_stone"
+    },
+    {
+      "item": "equivalence:inferno_coal"
+    }
+  ],
+  "result": {
+    "item": "equivalence:nitro_coal",
+    "count": 4
+  }
+}

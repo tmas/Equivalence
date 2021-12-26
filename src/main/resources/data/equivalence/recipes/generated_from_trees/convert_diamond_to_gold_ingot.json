@@ -1,0 +1,15 @@
+{
+  "type": "equivalence:shapeless_custom_remainder",
+  "ingredients": [
+    {
+      "item": "equivalence:philosophers_stone"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "item": "minecraft:gold_ingot",
+    "count": 4
+  }
+}
