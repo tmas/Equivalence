@@ -29,6 +29,8 @@ public class ModItems {
     public static final BlockItem INFERNO_COAL_BLOCK = new BlockItem(ModBlocks.INFERNO_COAL_BLOCK, new Item.Settings().group(Equivalence.ITEM_GROUP));
     public static final BlockItem BLAZING_COAL_BLOCK = new BlockItem(ModBlocks.BLAZING_COAL_BLOCK, new Item.Settings().group(Equivalence.ITEM_GROUP));
 
+    public static final BlockItem TRANSMUTATION_TABLE = new BlockItem(ModBlocks.TRANSMUTATION_TABLE, new Item.Settings().group(Equivalence.ITEM_GROUP));
+
     //Registering
     public static void registerItems(){
         //Register Items
@@ -49,6 +51,8 @@ public class ModItems {
         Registry.register(Registry.ITEM, new Identifier(Equivalence.MOD_ID, "nitro_coal_block"), NITRO_COAL_BLOCK);
         Registry.register(Registry.ITEM, new Identifier(Equivalence.MOD_ID, "inferno_coal_block"), INFERNO_COAL_BLOCK);
         Registry.register(Registry.ITEM, new Identifier(Equivalence.MOD_ID, "blazing_coal_block"), BLAZING_COAL_BLOCK);
+
+        Registry.register(Registry.ITEM, new Identifier(Equivalence.MOD_ID, "transmutation_table"), TRANSMUTATION_TABLE);
 
         //Register Fuels
         FuelRegistry.INSTANCE.add(TINY_COAL, 200);

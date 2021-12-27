@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "equivalence:blocks/transmutation_table/top",
+    "north": "equivalence:blocks/transmutation_table/side",
+    "south": "equivalence:blocks/transmutation_table/side",
+    "east": "equivalence:blocks/transmutation_table/side",
+    "west": "equivalence:blocks/transmutation_table/side",
+    "up": "equivalence:blocks/transmutation_table/top",
+    "down": "equivalence:blocks/transmutation_table/bottom"
+  }
+}
