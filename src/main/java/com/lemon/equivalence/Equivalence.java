@@ -2,6 +2,7 @@ package com.lemon.equivalence;
 
 import com.lemon.equivalence.loot_tables.LootTableAdditions;
 import com.lemon.equivalence.registry.ModBlocks;
+import com.lemon.equivalence.registry.ModCommands;
 import com.lemon.equivalence.registry.ModItems;
 import com.lemon.equivalence.registry.ModRecipes;
 import net.fabricmc.api.ModInitializer;
@@ -23,6 +24,7 @@ public class Equivalence implements ModInitializer {
         ModItems.registerItems();
         ModBlocks.registerBlocks();
         ModRecipes.registerRecipes();
+        ModCommands.registerCommands();
 
         LootTableAdditions.modifyLootTables();
     }
